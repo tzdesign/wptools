@@ -1,0 +1,44 @@
+#!/bin/bash
+
+function getWordpress {
+
+    echo "Downloading wordpress:"
+    curl -O# https://wordpress.org/latest.tar.gz
+    tar -xzf latest.tar.gz
+    rm latest.tar.gz
+
+
+}
+
+
+
+if [ "$1" = "get" ]
+
+then
+    getWordpress
+fi
+
+
+if [ "$1" = "update" ]
+
+then
+  # GET WORDPRESS
+  getWordpress
+
+  echo "Copy files to directory"
+  # COPY merge
+  cp -aR wordpress/* .
+
+  rm -rf wordpress
+
+  echo "Done!"
+
+fi
+
+if [ "$1" = "install" ]
+
+then
+    getWordpress
+    mv wordpress/* .
+    rm -rf wordpress
+fi
