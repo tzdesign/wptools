@@ -3,7 +3,7 @@
 function getWordpress {
 
     echo "Downloading wordpress:"
-    curl -O# https://wordpress.org/latest.tar.gz
+    curl -O# https://de.wordpress.org/latest-de_DE.zip
     tar -xzf latest.tar.gz
     rm latest.tar.gz
 
